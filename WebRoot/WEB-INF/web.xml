@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	   <servlet-name>Login</servlet-name>
+  	   <servlet-class>com.franklin.servlet.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginCheck</servlet-name>
+    <servlet-class>com.franklin.servlet.LoginCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>用于用户进行添加、删除等操作</description>
+    <display-name>Main</display-name>
+    <servlet-name>Main</servlet-name>
+    <servlet-class>com.franklin.servlet.Main</servlet-class>
+  </servlet>
+  <servlet>
+    <description>添加用户</description>
+    <display-name>AddUser</display-name>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.franklin.servlet.AddUser</servlet-class>
+  </servlet>
+   <servlet>
+    <description>添加用户界面</description>
+    <display-name>AddUserPage</display-name>
+    <servlet-name>AddUserPage</servlet-name>
+    <servlet-class>com.franklin.servlet.AddUserPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>出错界面</description>
+    <display-name>Err</display-name>
+    <servlet-name>Err</servlet-name>
+    <servlet-class>com.franklin.servlet.Err</servlet-class>
+  </servlet>
+  <servlet>
+    <description>成功添加用户</description>
+    <display-name>Ok</display-name>
+    <servlet-name>Ok</servlet-name>
+    <servlet-class>com.franklin.servlet.Ok</servlet-class>
+  </servlet>
+  <servlet>
+    <description>删除用户页面</description>
+    <display-name>DelUserPage</display-name>
+    <servlet-name>DelUserPage</servlet-name>
+    <servlet-class>com.franklin.servlet.DelUserPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>删除用户</description>
+    <display-name>DelUser</display-name>
+    <servlet-name>DelUser</servlet-name>
+    <servlet-class>com.franklin.servlet.DelUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>管理用户</description>
+    <display-name>ShowUserPage</display-name>
+    <servlet-name>ShowUserPage</servlet-name>
+    <servlet-class>com.franklin.servlet.ShowUserPage</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+  	   <servlet-name>Login</servlet-name>
+  	   <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginCheck</servlet-name>
+    <url-pattern>/LoginCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Main</servlet-name>
+    <url-pattern>/Main</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>AddUserPage</servlet-name>
+    <url-pattern>/AddUserPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Err</servlet-name>
+    <url-pattern>/Err</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ok</servlet-name>
+    <url-pattern>/Ok</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelUserPage</servlet-name>
+    <url-pattern>/DelUserPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelUser</servlet-name>
+    <url-pattern>/DelUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowUserPage</servlet-name>
+    <url-pattern>/ShowUserPage</url-pattern>
+  </servlet-mapping>
+  
+  <listener>
+  	<listener-class>com.franklin.listener.MyHttpSessionListener</listener-class>
+  </listener>
+  
+  <filter>
+  	<filter-name>MyAddUserFilter</filter-name>
+  	<filter-class>com.franklin.filter.MyAddUserFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MyAddUserFilter</filter-name>
+  	<servlet-name>AddUser</servlet-name>
+  </filter-mapping>
+</web-app>
